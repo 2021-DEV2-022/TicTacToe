@@ -2,14 +2,42 @@ import Foundation
 
 extension Array {
     func toLines() -> [[Element]] {
-        return [Array(self[0 ..< 3]), Array(self[3 ..< 6]), Array(self[6 ..< 9])]
+        var result = [[Element]]()
+        let gridSize = self.gridSize()
+        for index in [Int](0..<gridSize) {
+            let startIndex = index * gridSize
+            let endIndex = index * gridSize + gridSize
+            result.append(Array(self[startIndex ..< endIndex]))
+        }
+        return result
     }
 
     func toColumns() -> [[Element]] {
-        return [Array([self[0], self[3], self[6]]), Array([self[1], self[4], self[7]]), Array([self[2], self[5], self[8]])]
+        var result = [[Element]]()
+        let gridSize = self.gridSize()
+        for index in [Int](0..<gridSize) {
+            var rowArray = [Element]()
+            for row in [Int](0..<gridSize) {
+                rowArray.append(self[index + row * gridSize])
+            }
+            result.append(rowArray)
+        }
+        return result
     }
     
     func toDiagonals() -> [[Element]] {
-        return [Array([self[0], self[4], self[8]]), Array([self[2], self[4], self[6]])]
+        let gridSize = self.gridSize()
+        var firstDiagonal = [Element]()
+        var secondDiagonal = [Element]()
+        
+        for index in [Int](0..<gridSize) {
+            firstDiagonal.append(self[index + index * gridSize])
+            secondDiagonal.append(self[(index + 1) * gridSize - 1 - index])
+        }
+        return [firstDiagonal, secondDiagonal]
+    }
+    
+    func gridSize() -> Int {
+        return Int(sqrt(Double(self.count)))
     }
 }

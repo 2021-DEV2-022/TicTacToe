@@ -15,8 +15,15 @@ class Game {
     var winner: Player?
     var delegate: GameDelegate?
     
+    init(gridSize: Int = 3) {
+        grid = []
+        for _ in [Int](0..<gridSize*gridSize) {
+            grid.append(nil)
+        }
+    }
+    
     func cellSelected(position: Int) {
-        if position < 0 || position > 8 || grid[position] != nil {
+        if position < 0 || position >= grid.count || grid[position] != nil {
             return
         }
         grid[position] = currentPlayer
@@ -38,11 +45,15 @@ class Game {
     }
     
     func currentPlayerWin() -> Bool {
-        if grid.toLines().contains([currentPlayer, currentPlayer, currentPlayer]) {
+        var sequence = [Player]()
+        for _ in [Int](0..<grid.gridSize()) {
+            sequence.append(currentPlayer)
+        }
+        if grid.toLines().contains(sequence) {
             return true
-        } else if grid.toColumns().contains([currentPlayer, currentPlayer, currentPlayer]) {
+        } else if grid.toColumns().contains(sequence) {
             return true
-        } else if grid.toDiagonals().contains([currentPlayer, currentPlayer, currentPlayer]) {
+        } else if grid.toDiagonals().contains(sequence) {
             return true
         }
         return false

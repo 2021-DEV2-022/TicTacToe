@@ -32,11 +32,18 @@ class GameCellSelectionTests: XCTestCase {
         XCTAssertEqual(Player.player1, game.currentPlayer)
     }
 
-    func testPlayerCannotSelectCellAfter8() throws {
+    func testPlayerCannotSelectCellAfter8InGirdSize3() throws {
         let game = Game()
         game.cellSelected(position: 9)
         XCTAssertEqual([nil, nil, nil, nil, nil, nil, nil, nil, nil], game.grid)
         XCTAssertEqual(Player.player1, game.currentPlayer)
+    }
+    
+    func testPlayerCannotSelectCellAfter8InGirdSize4() throws {
+        let game = Game(gridSize: 4)
+        game.cellSelected(position: 9)
+        XCTAssertEqual([nil, nil, nil, nil, nil, nil, nil, nil, nil, Player.player1, nil, nil, nil, nil, nil, nil], game.grid)
+        XCTAssertEqual(Player.player2, game.currentPlayer)
     }
     
     func testPlayerCannotSelectUsedCell() throws {
