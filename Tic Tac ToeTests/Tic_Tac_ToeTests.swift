@@ -1,10 +1,3 @@
-//
-//  Tic_Tac_ToeTests.swift
-//  Tic Tac ToeTests
-//
-//  Created by Loïc Lefebvre on 21/04/2021.
-//
-
 import XCTest
 @testable import Tic_Tac_Toe
 
