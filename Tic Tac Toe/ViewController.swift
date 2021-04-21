@@ -11,8 +11,10 @@ class ViewController: UIViewController {
     @IBOutlet private weak var button6: UIButton!
     @IBOutlet private weak var button7: UIButton!
     @IBOutlet private weak var button8: UIButton!
+    @IBOutlet private weak var currentPlayerLabel: UILabel!
     
     private var gridButtons: [UIButton] = []
+    private var game: Game = Game()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,7 @@ class ViewController: UIViewController {
         gridButtons.append(button6)
         gridButtons.append(button7)
         gridButtons.append(button8)
+        startNewGame()
     }
     
     @IBAction private func newGameHandle(_ sender: Any) {
@@ -33,8 +36,10 @@ class ViewController: UIViewController {
     
     @IBAction private func gridButtonHandle(_ sender: Any) {
         guard let button = sender as? UIButton else { return }
-        button.setImage(UIImage(named: "cross"), for: .disabled)
+        button.setImage(UIImage(named: game.currentPlayer.rawValue), for: .disabled)
         button.isEnabled = false
+        game.cellSelected(position: button.tag)
+        updateLabelCurrentPlayer()
     }
 }
 
@@ -42,6 +47,18 @@ private extension ViewController {
     func startNewGame() {
         for button in gridButtons {
             button.isEnabled = true
+        }
+        game = Game()
+        updateLabelCurrentPlayer()
+    }
+    
+    func updateLabelCurrentPlayer() {
+        if game.currentPlayer == .player1 {
+            currentPlayerLabel.text = "Player 1 - Cross"
+            currentPlayerLabel.textColor = .blue
+        } else {
+            currentPlayerLabel.text = "Player 2 - Circle"
+            currentPlayerLabel.textColor = .red
         }
     }
 }

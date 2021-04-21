@@ -191,6 +191,7 @@
                         <outlet property="button6" destination="Xwd-fA-mod" id="rmn-q6-mtY"/>
                         <outlet property="button7" destination="TsE-66-bsk" id="6BI-eu-MPh"/>
                         <outlet property="button8" destination="l1J-9j-Tgx" id="FgE-FO-66c"/>
+                        <outlet property="currentPlayerLabel" destination="hof-a2-MXP" id="Xa1-Dn-yoO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
