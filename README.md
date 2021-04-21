@@ -4,5 +4,8 @@
 
 ## Technical Informations
 
-Language : Swift 5
+Language : Swift 5  
 SDK : iOS 14.1
+
+## Tests
+Unit tests are implemented in `Tic Tac ToeTests/` folder
