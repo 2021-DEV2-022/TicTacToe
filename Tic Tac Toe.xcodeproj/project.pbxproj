@@ -19,6 +19,10 @@
 		E130B5E0263012EE006A1872 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130B5DE263012EE006A1872 /* Game.swift */; };
 		E130B5E1263012EE006A1872 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130B5DE263012EE006A1872 /* Game.swift */; };
 		E130B5E9263015AE006A1872 /* GameCellSelectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130B5E8263015AE006A1872 /* GameCellSelectionTests.swift */; };
+		E130B5F926301B99006A1872 /* GameIsOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130B5F826301B99006A1872 /* GameIsOver.swift */; };
+		E130B5FF26301E5F006A1872 /* Array+ToGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130B5FE26301E5F006A1872 /* Array+ToGrid.swift */; };
+		E130B60026301E5F006A1872 /* Array+ToGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130B5FE26301E5F006A1872 /* Array+ToGrid.swift */; };
+		E130B60126301E5F006A1872 /* Array+ToGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E130B5FE26301E5F006A1872 /* Array+ToGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,8 @@
 		E130B5D52630059E006A1872 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E130B5DE263012EE006A1872 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E130B5E8263015AE006A1872 /* GameCellSelectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellSelectionTests.swift; sourceTree = "<group>"; };
+		E130B5F826301B99006A1872 /* GameIsOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameIsOver.swift; sourceTree = "<group>"; };
+		E130B5FE26301E5F006A1872 /* Array+ToGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ToGrid.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 		E130B59D2630053C006A1872 /* Tic Tac Toe */ = {
 			isa = PBXGroup;
 			children = (
+				E130B5FD26301E47006A1872 /* Extensions */,
 				E130B5DD263012DC006A1872 /* Models */,
 				E130B5D42630057C006A1872 /* Resources */,
 				E130B59E2630053C006A1872 /* AppDelegate.swift */,
@@ -123,6 +130,7 @@
 			children = (
 				E130B5B72630053E006A1872 /* Info.plist */,
 				E130B5E8263015AE006A1872 /* GameCellSelectionTests.swift */,
+				E130B5F826301B99006A1872 /* GameIsOver.swift */,
 			);
 			path = "Tic Tac ToeTests";
 			sourceTree = "<group>";
@@ -150,6 +158,14 @@
 				E130B5DE263012EE006A1872 /* Game.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E130B5FD26301E47006A1872 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E130B5FE26301E5F006A1872 /* Array+ToGrid.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +301,7 @@
 			files = (
 				E130B5A32630053C006A1872 /* ViewController.swift in Sources */,
 				E130B59F2630053C006A1872 /* AppDelegate.swift in Sources */,
+				E130B5FF26301E5F006A1872 /* Array+ToGrid.swift in Sources */,
 				E130B5A12630053C006A1872 /* SceneDelegate.swift in Sources */,
 				E130B5DF263012EE006A1872 /* Game.swift in Sources */,
 			);
@@ -294,8 +311,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E130B60026301E5F006A1872 /* Array+ToGrid.swift in Sources */,
 				E130B5E9263015AE006A1872 /* GameCellSelectionTests.swift in Sources */,
 				E130B5E0263012EE006A1872 /* Game.swift in Sources */,
+				E130B5F926301B99006A1872 /* GameIsOver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E130B5C12630053E006A1872 /* Tic_Tac_ToeUITests.swift in Sources */,
+				E130B60126301E5F006A1872 /* Array+ToGrid.swift in Sources */,
 				E130B5E1263012EE006A1872 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

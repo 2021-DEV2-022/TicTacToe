@@ -43,12 +43,29 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: GameDelegate {
+    func gameOver() {
+        var message = "The game is a draw"
+        if game.winner == Player.player1 {
+            message = "Player 1 wins"
+        } else if game.winner == Player.player2 {
+            message = "Player 2 wins"
+        }
+        let gameOverAlertView = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
+        gameOverAlertView.addAction(UIAlertAction(title: "New Game", style: .default, handler: { [weak self] _ in
+            self?.startNewGame()
+        }))
+        self.present(gameOverAlertView, animated: true, completion: nil)
+    }
+}
+
 private extension ViewController {
     func startNewGame() {
         for button in gridButtons {
             button.isEnabled = true
         }
         game = Game()
+        game.delegate = self
         updateLabelCurrentPlayer()
     }
     
