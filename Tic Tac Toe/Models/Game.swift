@@ -35,10 +35,10 @@ class Game {
     }
     
     func gameIsOver() -> Bool {
-        if !grid.contains(nil) {
-            return true
-        } else if currentPlayerWin() {
+        if currentPlayerWin() {
             winner = currentPlayer
+            return true
+        } else if !grid.contains(nil) {
             return true
         }
         return false
