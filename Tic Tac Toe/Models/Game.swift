@@ -16,7 +16,7 @@ class Game {
     var delegate: GameDelegate?
     
     func cellSelected(position: Int) {
-        if position < 0 || position > 8 {
+        if position < 0 || position > 8 || grid[position] != nil {
             return
         }
         grid[position] = currentPlayer

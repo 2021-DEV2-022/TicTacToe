@@ -38,4 +38,12 @@ class GameCellSelectionTests: XCTestCase {
         XCTAssertEqual([nil, nil, nil, nil, nil, nil, nil, nil, nil], game.grid)
         XCTAssertEqual(Player.player1, game.currentPlayer)
     }
+    
+    func testPlayerCannotSelectUsedCell() throws {
+        let game = Game()
+        game.grid[0] = Player.player2
+        game.cellSelected(position: 0)
+        XCTAssertEqual([Player.player2, nil, nil, nil, nil, nil, nil, nil, nil], game.grid)
+        XCTAssertEqual(Player.player1, game.currentPlayer)
+    }
 }
